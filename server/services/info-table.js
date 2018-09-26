@@ -1,4 +1,5 @@
 
+//2,调用model获取数据，返回给controller
 
 const infoModels = require('./../models/info-table.js')
 

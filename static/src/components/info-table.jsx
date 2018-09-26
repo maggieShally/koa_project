@@ -11,12 +11,14 @@ class InfoTable extends Component {
 		this.state = {
 			dataSource: [],
 			pageNo: 1,
-			pageSize: 5,
-			total: 0,
+			pageSize: 10,
+      total: 0,
+      
 		}
 	}
 	componentDidMount() {
-		this.getInfoList();
+    this.getInfoList();
+    
 		
 	}
 

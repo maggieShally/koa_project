@@ -7,11 +7,22 @@ const bodyParser = require('koa-bodyparser')
 const koaLogger = require('koa-logger')
 const session = require('koa-session-minimal')
 const MysqlStore = require('koa-mysql-session')
+const cors = require('koa2-cors');
 
 const config = require('./../config')
 const routers = require('./routers/index')
 
 const app = new Koa()
+
+
+app.use(cors({
+  origin: '*',
+  exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
+  maxAge: 5,
+  credentials: true,
+  allowMethods: ['GET', 'POST', 'DELETE', 'PUT'],
+  allowHeaders: ['Content-Type', 'Authorization', 'Accept'],
+}))
 
 // session存储配置
 const sessionMysqlConfig= {

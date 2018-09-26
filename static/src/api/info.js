@@ -17,7 +17,19 @@ const addInfo = async (params) => {
 	return result
 }
 
+// const getDiaryList = async () => {
+// 	let result =  await Request.post({
+// 		url: '/api/diary/getDiary',
+// 		data: {
+//       pageNo: 1,
+//       pageSize: 10,
+//     }
+// 	})
+// 	return result
+// }
+
 export {
 	getInfoList,
-	addInfo,
+  addInfo,
+  // getDiaryList
 }

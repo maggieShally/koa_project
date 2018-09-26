@@ -1,4 +1,5 @@
 
+// 3，拿取model的信息，组合最终返回的数据成api
 
 const infoServices = require('./../services/info-table')
 

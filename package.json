@@ -47,6 +47,7 @@
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^2.0.0-beta.4",
     "jsx-loader": "^0.13.2",
+    "koa2-cors": "^2.0.6",
     "less": "^2.7.1",
     "less-loader": "^4.0.3",
     "node-sass": "^4.1.1",
