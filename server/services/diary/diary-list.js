@@ -1,5 +1,6 @@
 
 const diaryListModels  = require('./../../models/diary/diary-list')
+const commonModels  = require('./../../models/diary/common')
 
 
 const diaryListService = {
@@ -16,6 +17,11 @@ const diaryListService = {
   async getDiaryDetails(params) {
     const result = await diaryListModels.getDiaryDetails(params);
     return result;
+  },
+
+  async getToken(params) {
+    const result = await commonModels.getToken(params)
+    return result
   }
 }
 
