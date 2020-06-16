@@ -17,9 +17,11 @@ const routers = router
 
 
   .post('/diary/getDiary', diaryListController.getDiaryList)
-  .post('/diary/submitDiary', diaryListController.submitDiary)
-  .post('/diary/getDiaryDetails', diaryListController.getDiaryDetails)
+  .post('/diary/add', diaryListController.submitDiary)
+  .post('/diary/update', diaryListController.updateDiary)
+  .get('/diary/getDiaryDetails', diaryListController.getDiaryDetails)
   .post('/commom/getToken', diaryListCommonController.getToken)
+  .post('/diary/getDiaryDetails/delete', diaryListController.delDiaryDetails)
  
   
 module.exports = routers

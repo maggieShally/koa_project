@@ -6,7 +6,6 @@ const diaryInfo = {
   async getDiaryList(params) {
     const { pageNo, pageSize } = params;
     let totalResult = await dbUtils.query('SELECT count(*) as count FROM diary_list');
-    console.log(totalResult);
     let result = await dbUtils.findDataByPage( 'diary_list', ['id', 'content','date'],  (pageNo - 1)*pageSize, pageSize );
     return {
       itemList: result,
@@ -16,7 +15,6 @@ const diaryInfo = {
     }
   },
   async submitDiary(params) {
-    console.log(params);
     const { content, date, location, color, weather, fontSize  } = params;
     let result = await dbUtils.insertData('diary_list', {
       content,      
@@ -29,6 +27,7 @@ const diaryInfo = {
 
     return result;
   },
+
   async getDiaryDetails(params) {
     const  { id } = params;
     let result =  await dbUtils.findDataById('diary_list', id);
@@ -36,6 +35,16 @@ const diaryInfo = {
     return {
       info: result[0]
     };
+  },
+
+  async delDiaryDetails(params) {
+    const { id } = params
+    const data = await dbUtils.deleteDataById('diary_list', id);
+  },
+  
+  async updateDiary(params) {
+    const { id } = params
+    const data = await dbUtils.updateData('diary_list',params, id);
   }
 }
 

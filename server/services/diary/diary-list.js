@@ -1,12 +1,19 @@
-
-const diaryListModels  = require('./../../models/diary/diary-list')
-const commonModels  = require('./../../models/diary/common')
-
+const diaryListModels = require("./../../models/diary/diary-list");
+const commonModels = require("./../../models/diary/common");
 
 const diaryListService = {
+  async updateDiary(params) {
+    await diaryListModels.updateDiary(params);
+    return true;
+  },
+
+  async delDiaryDetails(params) {
+    await diaryListModels.delDiaryDetails(params);
+    return true;
+  },
+
   async getDiaryList(params) {
-    const result = await diaryListModels.getDiaryList(params);
-    return result
+    return await diaryListModels.getDiaryList(params);
   },
 
   async submitDiary(params) {
@@ -20,9 +27,10 @@ const diaryListService = {
   },
 
   async getToken(params) {
-    const result = await commonModels.getToken(params)
-    return result
-  }
-}
+    const result = await commonModels.getToken(params);
+    
+    return result;
+  },
+};
 
 module.exports = diaryListService;
